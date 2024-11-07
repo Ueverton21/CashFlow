@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="UseCases\Expenses\Reports\Pdf\Fonts\Raleway-Black.ttf" />
+    <None Remove="UseCases\Expenses\Reports\Pdf\Fonts\Raleway-Regular.ttf" />
+    <None Remove="UseCases\Expenses\Reports\Pdf\Fonts\WorkSans-Black.ttf" />
+    <None Remove="UseCases\Expenses\Reports\Pdf\Fonts\WorkSans-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="UseCases\Expenses\Reports\Pdf\Fonts\Raleway-Black.ttf" />
+    <EmbeddedResource Include="UseCases\Expenses\Reports\Pdf\Fonts\Raleway-Regular.ttf" />
+    <EmbeddedResource Include="UseCases\Expenses\Reports\Pdf\Fonts\WorkSans-Black.ttf" />
+    <EmbeddedResource Include="UseCases\Expenses\Reports\Pdf\Fonts\WorkSans-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="ClosedXML" Version="0.104.1" />
+    <PackageReference Include="FluentValidation" Version="11.10.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
+    <PackageReference Include="PDFsharp-MigraDoc" Version="6.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CashFlow.Communication\CashFlow.Communication.csproj" />
+    <ProjectReference Include="..\CashFlow.Domain\CashFlow.Domain.csproj" />
+    <ProjectReference Include="..\CashFlow.Exception\CashFlow.Exception.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="UseCases\Expenses\Reports\ResourcesReportMessages.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ResourcesReportMessages.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="UseCases\Expenses\Reports\ResourcesReportMessages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesReportMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Logo\report.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
