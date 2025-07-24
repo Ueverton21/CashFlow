@@ -1,4 +1,6 @@
-﻿namespace CashFlow.Application.UseCases.Expenses.Reports.Pdf;
+﻿using CashFlow.Domain.Entities;
+
+namespace CashFlow.Application.UseCases.Expenses.Reports.Pdf;
 
 public interface IGenerateExpenseReportPdfUseCase
 {

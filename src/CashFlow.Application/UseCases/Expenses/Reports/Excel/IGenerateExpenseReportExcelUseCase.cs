@@ -1,4 +1,6 @@
-﻿namespace CashFlow.Application.UseCases.Expenses.Reports.Excel;
+﻿using CashFlow.Domain.Entities;
+
+namespace CashFlow.Application.UseCases.Expenses.Reports.Excel;
 
 public interface IGenerateExpenseReportExcelUseCase
 {

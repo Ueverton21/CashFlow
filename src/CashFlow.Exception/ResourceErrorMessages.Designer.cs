@@ -70,6 +70,15 @@ namespace CashFlow.Exception {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a You are not authorized.
+        /// </summary>
+        public static string AUTHORIZE_ERROR {
+            get {
+                return ResourceManager.GetString("AUTHORIZE_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Expenses cannot be for the future..
         /// </summary>
         public static string DATE_LESS_THAN_OR_EQUAL {
@@ -79,11 +88,65 @@ namespace CashFlow.Exception {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a This email is already in use..
+        /// </summary>
+        public static string EMAIL_EXISTS {
+            get {
+                return ResourceManager.GetString("EMAIL_EXISTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The email is require.
+        /// </summary>
+        public static string EMAIL_REQUIRED {
+            get {
+                return ResourceManager.GetString("EMAIL_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Email format is invalid..
+        /// </summary>
+        public static string EMAIL_VALID {
+            get {
+                return ResourceManager.GetString("EMAIL_VALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Expense not found..
         /// </summary>
         public static string EXPENSE_NOT_FOUND {
             get {
                 return ResourceManager.GetString("EXPENSE_NOT_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a E-mail and/or password invalid..
+        /// </summary>
+        public static string INVALID_LOGIN {
+            get {
+                return ResourceManager.GetString("INVALID_LOGIN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The name is require. .
+        /// </summary>
+        public static string NAME_REQUIRED {
+            get {
+                return ResourceManager.GetString("NAME_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Your password must be at least 8 characters long, containing at least one uppercase letter, one lowercase letter, one number and one special character..
+        /// </summary>
+        public static string PASSWORD_INVALID {
+            get {
+                return ResourceManager.GetString("PASSWORD_INVALID", resourceCulture);
             }
         }
         

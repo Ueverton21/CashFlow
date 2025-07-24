@@ -120,11 +120,32 @@
   <data name="AMOUNT" xml:space="preserve">
     <value>O valor deve ser maior que zero</value>
   </data>
+  <data name="AUTHORIZE_ERROR" xml:space="preserve">
+    <value>Você não tem autorização.</value>
+  </data>
   <data name="DATE_LESS_THAN_OR_EQUAL" xml:space="preserve">
     <value>As despesas não podem ser para o futuro</value>
   </data>
+  <data name="EMAIL_EXISTS" xml:space="preserve">
+    <value>Esse email já está em uso</value>
+  </data>
+  <data name="EMAIL_REQUIRED" xml:space="preserve">
+    <value>Email é obrigatório.</value>
+  </data>
+  <data name="EMAIL_VALID" xml:space="preserve">
+    <value>Formato de email inválido</value>
+  </data>
   <data name="EXPENSE_NOT_FOUND" xml:space="preserve">
     <value>Despesa não encontrada</value>
+  </data>
+  <data name="INVALID_LOGIN" xml:space="preserve">
+    <value>Email e/ou senha inválida.</value>
+  </data>
+  <data name="NAME_REQUIRED" xml:space="preserve">
+    <value>Nome é obrigatório.</value>
+  </data>
+  <data name="PASSWORD_INVALID" xml:space="preserve">
+    <value>Sua senha deve ter no minímo 8 caracteres, contendo pelo menos uma letra maiúscula, uma letra minúscula, um número e um caractere especial.</value>
   </data>
   <data name="PAYMENT_TYPE" xml:space="preserve">
     <value>O tipo de pagamento não é válido</value>
