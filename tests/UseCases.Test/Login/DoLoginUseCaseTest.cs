@@ -9,7 +9,7 @@ using CommomTestsUtilities.Requests;
 using CommomTestsUtilities.Token;
 using FluentAssertions;
 
-namespace UseCases.Test.Users.Login;
+namespace UseCases.Test.Login;
 
 public class DoLoginUseCaseTest
 {
