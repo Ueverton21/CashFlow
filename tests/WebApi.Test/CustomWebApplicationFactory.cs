@@ -47,7 +47,7 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
         Expense_MemberTeam = new ExpenseIdentityManager(AddExpenses(context, userTeamMember,expenseId: 1));
 
         var userAdmin = AddUserAdmin(context, passwordEncripter, tokenGenerator);
-        Expense_Admin = new ExpenseIdentityManager(AddExpenses(context, userTeamMember, expenseId: 2));
+        Expense_Admin = new ExpenseIdentityManager(AddExpenses(context, userAdmin, expenseId: 2));
 
         context.SaveChanges();
     }

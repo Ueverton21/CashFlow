@@ -19,7 +19,7 @@ namespace WebApi.Test.Expenses.GetById
         public GetExpenseByIdTest(CustomWebApplicationFactory customWebApplicationFactory) : base(customWebApplicationFactory)
         {
             _token = customWebApplicationFactory.User_Team_Member.GetToken();
-            _expenseId = customWebApplicationFactory.Expense.GetExpenseId();
+            _expenseId = customWebApplicationFactory.Expense_MemberTeam.GetExpenseId();
         }
         [Fact]
         public async Task Success()
