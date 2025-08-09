@@ -126,6 +126,9 @@
   <data name="DATE_LESS_THAN_OR_EQUAL" xml:space="preserve">
     <value>Expenses cannot be for the future.</value>
   </data>
+  <data name="EMAIL_ALREADY_REGISTERED" xml:space="preserve">
+    <value>E-mail already registered</value>
+  </data>
   <data name="EMAIL_EXISTS" xml:space="preserve">
     <value>This email is already in use.</value>
   </data>
