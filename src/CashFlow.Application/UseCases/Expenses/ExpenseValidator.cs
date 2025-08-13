@@ -13,5 +13,10 @@ public class ExpenseValidator : AbstractValidator<RequestExpenseJson>
         RuleFor(expense => expense.Amount).GreaterThan(0).WithMessage(ResourceErrorMessages.AMOUNT);
         RuleFor(expense => expense.Date).LessThanOrEqualTo(DateTime.UtcNow).WithMessage(ResourceErrorMessages.DATE_LESS_THAN_OR_EQUAL);
         RuleFor(expense => expense.PaymentType).IsInEnum().WithMessage(ResourceErrorMessages.PAYMENT_TYPE);
+        RuleFor(expense => expense.Tags)
+            .ForEach(rule =>
+            {
+                rule.IsInEnum().WithMessage(ResourceErrorMessages.TAG_TYPE_NOT_SUPPORTED);
+            });
     }
 }

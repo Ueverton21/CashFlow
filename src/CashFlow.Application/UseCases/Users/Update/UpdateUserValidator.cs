@@ -16,6 +16,7 @@ namespace CashFlow.Application.UseCases.Users.Update
             RuleFor(user => user.Email)
                 .NotEmpty()
                 .WithMessage(ResourceErrorMessages.EMAIL_REQUIRED)
+                .EmailAddress()
                 .When(user => string.IsNullOrWhiteSpace(user.Email) == false, ApplyConditionTo.CurrentValidator)
                 .WithMessage(ResourceErrorMessages.EMAIL_VALID);
 

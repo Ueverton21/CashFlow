@@ -4,9 +4,9 @@ using CashFlow.Exception;
 using CommomTestsUtilities.Requests;
 using FluentAssertions;
 
-namespace Validators.Tests.Expenses.Register;
+namespace Validators.Tests.Expenses;
 
-public class RegisterExpenseValidatorTests
+public class ExpenseValidatorTests
 {
     [Fact]
     public void Success()
@@ -25,7 +25,8 @@ public class RegisterExpenseValidatorTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData("      ")]
-    public void ErrorTitleEmpty(string title) {
+    public void ErrorTitleEmpty(string title)
+    {
         //Arrange
         var validator = new ExpenseValidator();
         var request = RequestExpenseJsonBuilder.Build();
@@ -89,5 +90,22 @@ public class RegisterExpenseValidatorTests
         result.IsValid.Should().BeFalse();
         result.Errors.Should().ContainSingle().And
             .Contain(e => e.ErrorMessage.Equals(ResourceErrorMessages.AMOUNT));
+    }
+
+    [Fact]
+    public void Error_TagInvalid()
+    {
+        //Arrange
+        var validator = new ExpenseValidator();
+        var request = RequestExpenseJsonBuilder.Build();
+        request.Tags.Add((Tag)1000);
+
+        //Act
+        var result = validator.Validate(request);
+
+        //Assert
+        result.IsValid.Should().BeFalse();
+        result.Errors.Should().ContainSingle().And
+            .Contain(e => e.ErrorMessage.Equals(ResourceErrorMessages.TAG_TYPE_NOT_SUPPORTED));
     }
 }

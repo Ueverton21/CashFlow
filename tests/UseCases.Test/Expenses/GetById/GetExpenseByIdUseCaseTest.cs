@@ -28,6 +28,7 @@ namespace UseCases.Test.Expenses.GetById
             result.Date.Should().Be(expense.Date);
             result.Amount.Should().Be(expense.Amount);
             result.PaymentType.Should().Be((PaymentType)expense.PaymentType);
+            result.Tags.Should().NotBeNullOrEmpty().And.BeEquivalentTo(expense.Tags.Select(x => x.Value));
         }
         [Fact]
         public async Task Error_Expense_Not_Found()

@@ -30,20 +30,21 @@ internal class ExpensesRepository : IExpenseReadOnlyRepository, IExpenseWriteOnl
 
     async Task<Expense?> IExpenseReadOnlyRepository.GetById(User user,long id)
     {
-        return await _context.Expenses.AsNoTracking().FirstOrDefaultAsync(e => e.Id == id && e.UserId == user.Id);
+        return await GetFullExpense()
+            .AsNoTracking()
+            .FirstOrDefaultAsync(e => e.Id == id && e.UserId == user.Id);
+            
     }
     async Task<Expense?> IExpenseUpdateOnlyRepository.GetById(User user, long id)
     {
-        return await _context.Expenses.FirstOrDefaultAsync(e => e.Id == id && user.Id == e.UserId);
+        return await GetFullExpense()
+            .FirstOrDefaultAsync(e => e.Id == id && user.Id == e.UserId);
     }
 
     public void Update(long id, Expense expense)
     {
-        var result = _context.Expenses.FirstOrDefaultAsync(e => e.Id == id);
-        if (result is not null)
-        {
-            //_context.Expenses.Update(result);
-        }
+        _context.Expenses.Update(expense);
+        
     }
 
     public async Task<List<Expense>> FilterByMonth(User user, DateOnly date)
@@ -58,5 +59,10 @@ internal class ExpensesRepository : IExpenseReadOnlyRepository, IExpenseWriteOnl
             .Where(e => e.UserId == user.Id && e.Date >= startDate && e.Date<=endDate)
             .OrderBy(e => e.Date)
             .ToListAsync();
+    }
+
+    private Microsoft.EntityFrameworkCore.Query.IIncludableQueryable<Expense, ICollection<Tag>> GetFullExpense()
+    {
+        return _context.Expenses.Include(ex => ex.Tags);
     }
 }
